@@ -1,6 +1,7 @@
 import Button from "./Button";
 import Client from "./Clients";
 import Heroform from "./Heroform";
+import './Hero.css'
 function Hero() {
     return <>
         <div class="homeBanner">

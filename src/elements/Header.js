@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import Button from './Button';
 import logo from '../image/logo.svg'
+import './Header.css'
 
 function Header() {
     return (
@@ -46,11 +47,18 @@ function Header() {
                             <li class="nav-item me-4">
                                 <NavLink activeClassName="active" exact className="nav-link" to="/">Home</NavLink>
                             </li>
-                            <li class="nav-item me-4">
-                                <NavLink activeClassName="active" className="nav-link" to="/why-us">Why Us</NavLink>
-                            </li>
+                            
+
                             <li class="nav-item me-4">
                                 <NavLink activeClassName="active" className="nav-link" to="/services">Services</NavLink>
+                            </li>
+
+                            <li class="nav-item me-4">
+                                <NavLink activeClassName="active" className="nav-link" to="/our-clients">Our Clients</NavLink>
+                            </li>
+
+                            <li class="nav-item me-4">
+                                <NavLink activeClassName="active" className="nav-link" to="/why-us">Why Us</NavLink>
                             </li>
                             <li class="nav-item me-4">
                                 <NavLink activeClassName="active" className="nav-link" to="/contact">Contact</NavLink>

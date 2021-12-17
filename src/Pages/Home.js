@@ -1,5 +1,7 @@
 import Button from "../elements/Button";
 import Hero from "../elements/Hero";
+import Hiredev from "../elements/Hiredev";
+import Newsletter from "../elements/Newsletter";
 import Slidersolution from "../elements/Slidersolution";
 
 function Home(props) {
@@ -152,9 +154,10 @@ function Home(props) {
                 </div>
             </div>
         </div>
-        
+
         {/* process */}
-        <div className="process blue-bg py-padding ">
+        <div className="process blue-bg py-padding position-relative ">
+            <img src="./img/topwave.png" class="manage-bar img-fluid" alt="images" />
             <div className="container">
                 <div className="process-sec">
                     <div className="proleft">
@@ -252,7 +255,6 @@ function Home(props) {
                                     </div>
                                     <p>Not getting the skills you need in your part of the globe? We have access to a global team of IT professionals with years of creating real-world solutions.</p>
                                 </li>
-
                                 <li>
                                     <div className="etitle">
                                         <div className="econ pink">2</div>
@@ -260,7 +262,6 @@ function Home(props) {
                                     </div>
                                     <p>Whether you want a complete team to build your new app or just need to extend your existing team with additional talent, we can scale our dedicated resource model package.</p>
                                 </li>
-
                                 <li>
                                     <div className="etitle">
                                         <div className="econ blue">3</div>
@@ -268,8 +269,6 @@ function Home(props) {
                                     </div>
                                     <p>When you work with a dedicated resource team, the team works from a remote location, drastically bringing down your overheads in terms of office space and software.</p>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
@@ -278,37 +277,10 @@ function Home(props) {
         </div>
 
         {/* hire devs */}
-        <div className="hiredevs py-padding">
-            <div className="container">
-                <div className="row py-md-4  align-items-center justify-content-between">
-                    <div className="col-md-7"><h2>Build A Better Project With Our Developers</h2></div>
-                    <div className="col-md-5 ">
-                        <Button text={"Hire Developer"} href={"#"} addclass={"green-btn m-auto d-table"} />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        {/* subscribe */}
-        <div className="subscribe py-padding">
-            <img src={window.location.origin + '/img/newsletterbg.svg'} class="bg-img rightbottom img-fluid m-auto d-table" />
-
-            <div className="container">
-                <div className="sec-title newsinner">
-                    <h2>Subscribe</h2>
-                    <h3>Our clients describe us as a product team which creates amazing Projects</h3>
-                    <p>Submit your email address and subscribe to our newsletter to be on the up and up.</p>
-                    <div className="newsletterbar">
-                        <div className="inputBar">
-                            <input type="text" placeholder="mail.name@gmail.com" class="form-control" />
-                            <img src={window.location.origin + '/img/pen.svg'} class="img-fluid m-auto d-table" />
-                        </div>
-                        <button class="mainBtn border-0">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Hiredev />
+        
+        {/* newslettre */}
+        <Newsletter />
     </>
 }
 export default Home; 

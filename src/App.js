@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import React from 'react';
 import './App.css'
+
  
 // pages
 import Home from './Pages/Home';
@@ -11,16 +12,14 @@ import Service from './Pages/Service';
 import Header from './elements/Header';
 import Footer from './elements/Footer';
 import Whyus from './Pages/Whyus';
-
+import Ourclient from './Pages/Ourclient';
 
 function App() {
-
     return (
-        <div className="App">
+        <div className="App"   >
             <Router>
                 <Header />
                 {/* switch cases */}
-                
                 <Switch>
                     <Route exact path="/">
                         <Home />
@@ -31,10 +30,14 @@ function App() {
                     <Route path="/services">
                         <Service />
                     </Route>
+                    <Route path="/our-clients">
+                       <Ourclient />
+                    </Route>
                     <Route path="/contact">
                         <Contact />
                     </Route>
                 </Switch>
+
                 <Footer />
             </Router>
         </div>

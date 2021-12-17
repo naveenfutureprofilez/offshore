@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // fonts
 import './fonts/GillSans-Bold.woff';
 import './fonts/GillSans-Bold.woff2';
-import './fonts/GillSans-BoldItalic.woff';
+import './fonts/GillSans-BoldItalic.woff'; 
 import './fonts/GillSans-BoldItalic.woff2';
 import './fonts/GillSans-CondensedRegular.woff';
 import './fonts/GillSans-CondensedRegular.woff2';
@@ -23,7 +23,7 @@ import './fonts/GillSans-MediumItalic.woff2';
 import './fonts/GillSans.woff';
 import './fonts/GillSans.woff2';
 
-
+ 
 ReactDOM.render(
   <React.StrictMode>
     <App />
