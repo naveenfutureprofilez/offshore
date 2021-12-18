@@ -6,3 +6,17 @@
  color:#FFFFFF;}
 .hiredevs h2{font-family:Gill Sans;font-style:normal;font-weight:900;font-size:43px;line-height:56px;/* or 117% */
  color:#FFFFFF;}
+@media ( max-width:1199px){
+    .hiredevs h2 {
+        font-weight: 800;
+        font-size: 36px;
+        line-height: inherit;
+    }
+}
+
+@media ( max-width:991px){
+    .hiredevs h2 {
+        font-weight: 700;
+        font-size: 28px;
+    }
+}

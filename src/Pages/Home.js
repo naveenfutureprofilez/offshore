@@ -11,10 +11,10 @@ function Home(props) {
         <div class="certified-devs py-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-lg-5">
                         <img src={window.location.origin + '/img/certified-dev.png'} class="img-fluid m-auto d-table" />
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-lg-7">
                         <div class="sec-title">
                             <h2>Hire Certified Developers</h2>
                             <h3>Hire Developers For Website & Mobile </h3>
@@ -196,26 +196,26 @@ function Home(props) {
                     <p>Most established businesses reach the pinnacle of their industry by using the highly cost-effective IT expertise of an offshore company while they focus on their core, and that’s where the assistance of a highly proficient offshore IT staffing agency can prove to be a masterstroke. Here’s what you get from acquiring our globally acclaimed OIS solutions:</p>
                 </div>
                 <div className="row mb-4 pb-2">
-                    <div className="col-md-3">
+                    <div className="col-lg-3 col-sm-6">
                         <div className="agency-box profit ">
                             <h2>Remain Profitable</h2>
                             <p>The most profitable ventures today prefer to work “smarter” rather than “harder: and outsourcing their IT projects to a reputable agency.</p>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-lg-3 col-sm-6">
                         <div className="agency-box stay ">
                             <h2>Stay Ahead</h2>
                             <p>An experienced offshore IT staff will always be well-versed with the latest and greatest tools & technology. They conduct thorough industry research.</p>
 
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-lg-3 col-sm-6">
                         <div className="agency-box focus">
                             <h2>Focus On Your Core</h2>
                             <p>Why deal with highly complex web projects on your own when you can instead use the expertise of a world-class offshore IT staff?</p>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-lg-3 col-sm-6">
                         <div className="agency-box brand">
                             <h2>Elevate Your Brand</h2>
                             <p>Retaining an offshore IT staff is obviously cost-friendly, but that’s not all. Their technical skills & renowned IT acumen lets you acquire custom web.</p>
@@ -237,15 +237,15 @@ function Home(props) {
         <div className="abshore py-padding">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-lg-6 mb-5 mb-lg-0">
                         <div className="sec-title">
                             <h2>Offshore IT Staffing</h2>
                             <h3>A leading offshore staffing IT solution provider since 2008</h3>
                             <p>Some metrics play an essential role to measure the pulse of a company’s customer service efficiency, while others are more evaluating if a brand has a customer-centric approach. Our customer dashboard will examine this second type of metrics.</p>
-                            <Button text={"Learn More"} href={"#"} addclass={"mt-5"} />
+                            <Button text={"Learn More"} href={"#"} addclass={"mt-4 mt-lg-5"} />
                         </div>
                     </div>
-                    <div className="col-md-6 ps-md-5">
+                    <div className="col-lg-6 ps-lg-5">
                         <div className="event-sec">
                             <ul>
                                 <li>

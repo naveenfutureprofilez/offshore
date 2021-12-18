@@ -56,9 +56,9 @@ body {
 
 /* certified devs */
 .dev-services{display:flex;flex-wrap:wrap;padding-top:30px;margin:0 -1.5%;}
-.serDev{background:#FFFFFF;box-shadow:0px 10px 20px 10px rgba(61,4,108,0.05);border-radius:10px;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex:0 0 47%;margin:0px 1.5% 3% 1.5%;}
+.serDev{max-width: 47%; background:#FFFFFF;box-shadow:0px 10px 20px 10px rgba(61,4,108,0.05);border-radius:10px;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex:0 0 47%;margin:0px 1.5% 3% 1.5%;}
 .ser-ico{width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:12px;margin-right:15px;}
-.dev-title{display:flex;align-items:center;font-family:Gill Sans;font-style:normal;font-weight:500;font-size:20px;line-height:32px;/* or 145% */
+.dev-title{display:flex;align-items:center;font-family:Gill Sans;font-style:normal;font-weight:500;font-size:20px;line-height:27px;
  color:#5A5A5A;}
 .webdev .ser-ico{background:rgba(0,166,81,0.08);}
 .phpdev .ser-ico{background:rgba(238,51,78,0.08);}
@@ -106,7 +106,8 @@ body {
 
 /* slider */
 .slideItem{display:flex !important;}
-.leftSlide{width:100%;max-width:45%;padding-right:100px;}
+.leftSlide{width:100%;max-width:45%;padding-right:50px;padding-bottom:40px;}
+
 .rightSlide{width:100%;max-width:55%;}
 .leftSlide .sec-title h1{line-height:55px;padding-bottom:20px;padding-top:0;}
 .solutions{position:relative;}
@@ -141,10 +142,132 @@ ol.breadcrumb{margin-top:15px;}
 ol.breadcrumb a{color:#B6B6B6 !important;}
 ol.breadcrumb li.breadcrumb-item.active{color:#00a651 !important;text-transform:capitalize;}
 .breadcrumb-item+.breadcrumb-item::before{color:#B6B6B6 !important;}
+.innerbanner.onlypagination {
+    padding: 30px 0;
+}
+
+.innerbanner.onlypagination .sec-title {
+    display: none;
+}
 /* service page */
 .innerbanner{background:rgba(230,240,249,0.5);padding:70px 0;}
 .innerbanner .rightbottom{max-width:610px;}
 .runningtext{font-family:Lato;font-style:normal;font-weight:500;font-size:22px;line-height:40px;color:#222222;}
 /* responisve */
-@media ( min-width:1366px){.topheader .container{max-width:1370px;}
+
+
+@media ( max-width:991px){
+    
+    .certified-devs  .col-lg-5 img {
+        max-height: 380px;
+    }
+    .process-sec {
+        display: block;
+    }
+    
+    .proright, .proleft {
+        max-width: 100%;
+    }
+    
+    .proleft {
+        padding-bottom: 40px;
+    }
+    .process-sec {
+        display: block;
+    }
+    
+    .proright, .proleft {
+        max-width: 100%;
+        flex:0 0 100%;
+    }
+    
+    .proleft {
+        padding-bottom: 40px;
+    }
+    
+    .rightSlide, .leftSlide {
+        max-width: 100% !important;
+        flex: 0 0 100%;
+    }
+    
+    .slideItem {
+        flex-wrap: wrap;
+    }
+    
+    .rightSlide {
+        order: 1;
+    }
+    
+    .leftSlide {
+        order: 2;
+        padding: 30px 0 !important;
+        padding-bottom: 50px !important;
+    }
+    
+    .solutions:after {
+        display: none;
+    }
+    
+    .leftSlide .sec-title h1 {
+        font-size: 29px;
+        line-height: inherit;
+    }
+    
+    .leftSlide .sec-title h1 br {
+        display: none;
+    }
+    
+    .leftSlide .sec-title h1  span {
+        padding: 0 10px;
+    }
+    .py-padding {
+        padding: 40px 0;
+    }
+    .py-padding {
+        padding: 40px 0;
+    }
+    
+    .sec-title h3 {
+        font-size: 30px;
+        line-height: inherit;
+    }
+    
+    .sec-title h2 {
+        font-size: 16px;
+        line-height: inherit;
+        letter-spacing: 3px;
+    }
+    .process {
+        padding-top: 60px;
+    }
+    .dev-title {
+        font-size: 17px;
+        line-height: inherit;
+    }
+}
+ 
+
+@media ( max-width:767px){
+    .sec-title h3 {
+        font-size: 24px;
+    }
+    .agency-box h2 {
+        font-size: 17px;
+        line-height: inherit;
+    }
+    .agency-box h2:before {
+        top: 1px;
+    }
+    .leftSlide {
+        padding: 20px 0 !important;
+        padding-bottom: 50px !important;
+    }
+    .leftSlide .sec-title h1 {
+        padding-bottom: 10px;
+    }
+    .hiredevs h2 {
+        text-align: center;
+        line-height: inherit !important;
+        margin-bottom: 20px;
+    }
 }

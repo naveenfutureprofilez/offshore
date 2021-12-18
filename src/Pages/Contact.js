@@ -5,8 +5,8 @@ import Newsletter from "../elements/Newsletter";
 
 function Contact() {
   return <>
-      <Pagecaption subtitle="Contact Us" pagetitle="We'd love to hear from you" />
-      <div className="contact">
+    <Pagecaption subtitle="Contact Us" pagetitle="We'd love to hear from you" />
+    <div className="contact">
       <div className="container">
         <div className="contactfrom">
           <div className="row">

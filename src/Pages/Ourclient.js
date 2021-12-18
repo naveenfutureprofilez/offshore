@@ -1,29 +1,32 @@
 import Hiredev from "../elements/Hiredev";
 import Newsletter from "../elements/Newsletter";
 import Pagecaption from "../elements/Pagecaption";
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Ourclient.css'
-import clientsData from './Clientsdata';
+import ClientsData from './Clientsdata';
 
 function Ourclient() {
+    const clients = ClientsData.map(cleints => {
+        return (
 
-    const Ourclient = () => {
-        const clients = clientsData.map(client => {
-            return (
-                <div className="col-md-4">
-                    <div className="clientbox">
-                        <div className="clientslogo">
-                            <img src={client.clientlogo} alt="" />
-                        </div>
-                        <p>{client.description}</p>
-                        <NavLink className="readmoreclint mainBtn border-btn mt-5" to="/services">Read More</NavLink>
+            <div className="col-md-4 mb-4" key={cleints.sitename}>
+                <div className="clientbox">
+                    <div className="clientslogo">
+                        <img src={cleints.clientlogo}  alt="" />
                     </div>
+                    <p>{cleints.description}</p>
+                    <Link
+                        to={`/our-clients/${cleints.sitename}`}
+                        className="readmoreclint mainBtn border-btn mt-4"
+                    >Read More</Link>
                 </div>
-            );
-        });
+            </div>
 
+        );
+    });
 
-        return <>
+    return (
+        <>
             <Pagecaption subtitle="Our Client" pagetitle="All Hi5 clients are 100% satisfied" />
 
 
@@ -38,5 +41,6 @@ function Ourclient() {
             <Hiredev />
             <Newsletter />
         </>
-    }
-    export default Ourclient;
+    );
+}
+export default Ourclient;

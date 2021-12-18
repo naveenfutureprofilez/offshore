@@ -4,10 +4,11 @@ import { useLocation } from 'react-router-dom'
 function Pagecaption(props) {
 const location = useLocation();
 const currentlocation = location.pathname.slice(1)
+console.log(props.addiclass);
 
     return <>
-        <div className="innerbanner position-relative">
-        <img src={window.location.origin + '/img/innerbg.svg'} class="img-fluid bg-img rightbottom" alt="image" />
+        <div className={`innerbanner position-relative ${props.addiclass}`}  >
+        <img src={'../img/innerbg.svg'} class="img-fluid bg-img rightbottom" alt="image" />
             <div className="container">
                 <div className="sec-title">
                     <h2>{props.subtitle}</h2>

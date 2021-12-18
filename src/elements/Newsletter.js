@@ -14,7 +14,7 @@ function Newsletter(props) {
                     <h3>Our clients describe us as a product team which creates amazing Projects</h3>
                     <p>Submit your email address and subscribe to our newsletter to be on the up and up.</p>
                     <div className="newsletterbar">
-                        <div className="inputBar">
+                        <div className="inputBar mb-4 mb-lg-5">
                             <input type="text" placeholder="mail.name@gmail.com" class="form-control" />
                             <img src={window.location.origin + '/img/pen.svg'} class="img-fluid m-auto d-table" />
                         </div>

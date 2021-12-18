@@ -12,7 +12,7 @@ function Hero() {
                         <h1>The Leading <span>Offshore IT
                             Staffing</span> Company In India</h1>
                         <p>We provide state-of-the-art outsourcing IT solutions to all scales of businesses at highly competitive prices.</p>
-                        <Button text={"Let’s talk"} addclass={"border-btn mt-5"} href={"#"} />
+                        <Button text={"Let’s talk"} addclass={"border-btn mt-4 mt-md-5"} href={"#"} />
                     </div>
                     <div class="col-md-6">
                         <Heroform />

@@ -43,28 +43,35 @@ function Header() {
 
                 <div class=" container">
                     <div className="menuBar d-flex flex-wrap justify-content-between align-items-center">
-                        <ul class="d-flex flex-wrap">
-                            <li class="nav-item me-4">
-                                <NavLink activeClassName="active" exact className="nav-link" to="/">Home</NavLink>
-                            </li>
-                            
 
-                            <li class="nav-item me-4">
-                                <NavLink activeClassName="active" className="nav-link" to="/services">Services</NavLink>
-                            </li>
+                        <nav class="navbar navbar-expand-lg p-0">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="d-flex flex-wrap">
+                                        <li class="nav-item me-4">
+                                            <NavLink activeClassName="active" exact className="nav-link" to="/">Home</NavLink>
+                                        </li>
 
-                            <li class="nav-item me-4">
-                                <NavLink activeClassName="active" className="nav-link" to="/our-clients">Our Clients</NavLink>
-                            </li>
+                                        <li class="nav-item me-4">
+                                            <NavLink activeClassName="active" className="nav-link" to="/services">Services</NavLink>
+                                        </li>
 
-                            <li class="nav-item me-4">
-                                <NavLink activeClassName="active" className="nav-link" to="/why-us">Why Us</NavLink>
-                            </li>
-                            <li class="nav-item me-4">
-                                <NavLink activeClassName="active" className="nav-link" to="/contact">Contact</NavLink>
-                            </li>
-                        </ul>
-
+                                        <li class="nav-item me-4">
+                                            <NavLink activeClassName="active" className="nav-link" to="/our-clients">Our Clients</NavLink>
+                                        </li>
+                                        <li class="nav-item me-4">
+                                            <NavLink activeClassName="active" className="nav-link" to="/why-us">Why Us</NavLink>
+                                        </li>
+                                        <li class="nav-item me-4">
+                                            <NavLink activeClassName="active" className="nav-link" to="/contact">Contact</NavLink>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </nav>
                         <div class="rightIcons">
                             <ul class="d-flex flex-wrap align-items-center">
                                 <li>
