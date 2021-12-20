@@ -11,3 +11,51 @@
 .featureslist .featurebox:nth-child(even) .feature-text:after{left:auto;right:-210px;}
 .feature-img img{width:100%;height:100%;max-height:360px;object-fit:cover;}
 .featurebox:last-child{padding-bottom:50px;}
+@media ( max-width:1199px){
+    .feature-text {
+        margin: 0;
+    }
+    
+    .featurebox {
+        padding-bottom: 60px;
+        align-items: inherit;
+    }
+    
+    .featureslist .featurebox  .feature-text:after {
+        display: none;
+    }
+    
+    .feature-img img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        max-height: initial;
+    }
+}
+
+@media ( max-width:991px){
+    .featurebox {
+        padding-bottom: 30px;
+        display: block;
+    }
+    
+    .feature-img, .feature-text {
+        max-width: 100%;
+    }
+    
+    .feature-text {
+        padding: 20px;
+    }
+    
+    .feature-img img {
+        max-height: 410px;
+    }
+    
+    .feature-text h2 {
+        font-size: 27px;
+        line-height: inherit;
+    }
+    .featurebox:last-child {
+        padding-bottom: 0;
+    }
+}

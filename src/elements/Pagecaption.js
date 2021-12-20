@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom'
 function Pagecaption(props) {
 const location = useLocation();
 const currentlocation = location.pathname.slice(1)
-console.log(props.addiclass);
 
     return <>
         <div className={`innerbanner position-relative ${props.addiclass}`}  >

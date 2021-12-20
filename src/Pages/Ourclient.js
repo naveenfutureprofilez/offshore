@@ -9,7 +9,7 @@ function Ourclient() {
     const clients = ClientsData.map(cleints => {
         return (
 
-            <div className="col-md-4 mb-4" key={cleints.sitename}>
+            <div className="col-lg-4 col-sm-6 mb-4" key={cleints.sitename}>
                 <div className="clientbox">
                     <div className="clientslogo">
                         <img src={cleints.clientlogo}  alt="" />

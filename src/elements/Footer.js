@@ -1,6 +1,7 @@
-import logo from '../image/logo.svg';
+import logofooter from '../image/logo-footer.svg';
 import './Footer.css'
-
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+  
 function Footer() {
     return (
         <>
@@ -8,7 +9,7 @@ function Footer() {
                 <div className="container">
                     <div className="footerinner d-flex  flex-wrap justify-content-between">
                         <div className="footer-des">
-                            <img src={logo} alt="" />
+                            <img src={logofooter} class="img-fluid mb-3" alt="" />
                             <p>A OffShore stays ahead of the curve with digital marketing trends. Our success has us leading the pack amongst.</p>
                             <ul class="d-flex flex-wrap align-items-center mt-4">
                                 <li>
@@ -32,24 +33,23 @@ function Footer() {
                         <div className="footer-links">
                             <h3>PRODUCT</h3>
                             <ul>
-                                <li><a href="#">Discover features</a></li>
-                                <li><a href="#">CMS integration</a></li>
-                                <li><a href="#">Customers</a></li>
-                                <li><a href="#">Weekly sessions</a></li>
-                                <li><a href="#">Free trials</a></li>
-                                <li><a href="#">What's next ?</a></li>
+                                <li><a href="javascript:void(0)">Discover features</a></li>
+                                <li><a href="javascript:void(0)">CMS integration</a></li>
+                                <li><a href="javascript:void(0)">Customers</a></li>
+                                <li><a href="javascript:void(0)">Weekly sessions</a></li>
+                                <li><a href="javascript:void(0)">Free trials</a></li>
+                                <li><a href="javascript:void(0)">What's next ?</a></li>
                             </ul>
                         </div>
                         <div className="footer-links">
                             <h3>COMPANY</h3>
                             <ul>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">About security</a></li>
-                                <li><a href="#">User guide</a></li>
-                                <li><a href="#">Terms of service</a></li>
-                                <li><a href="#">Terms of website</a></li>
-                                <li><a href="#">Privacy policy</a></li>
-                            </ul>
+                                        <li><NavLink  to="/services">Our Services</NavLink></li>
+                                        <li><NavLink  to="/why-us">Why Us</NavLink></li>
+                                        <li><NavLink  to="/our-clients">Our Clients</NavLink></li>
+                                        <li><NavLink  to="/privacy-policy">Privacy Policy</NavLink></li>
+                                        <li><NavLink  to="/terms-and-condition">Terms of website</NavLink></li>
+                                    </ul>
                         </div>
                         <div className="footer-contact">
                             <h3>Get In Touch</h3>

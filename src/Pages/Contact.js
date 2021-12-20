@@ -1,16 +1,43 @@
 import Pagecaption from "../elements/Pagecaption";
 import './Contact.css'
 import Newsletter from "../elements/Newsletter";
-
+import { useState } from "react";
+import emailjs from 'emailjs-com';
 
 function Contact() {
+
+  const Result = () => {
+    return <div class="mt-3 alert alert-success" role="alert">
+      Your Message has been sent. we will back to you soon.
+    </div>
+  }
+  const [result, showresult] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_7zzfpgs', 'template_3kuvsjo', e.target, 'user_itVge450EwlJRH3TFjFlU')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
+    setTimeout(() => {
+      showresult(true);
+    }, 500);
+    setTimeout(() => {
+      showresult(false);
+    }, 4000);
+  };
+
+
   return <>
     <Pagecaption subtitle="Contact Us" pagetitle="We'd love to hear from you" />
     <div className="contact">
       <div className="container">
         <div className="contactfrom">
           <div className="row">
-            <div className="col-md-5">
+            <div className="col-lg-5 mb-3 mb-md-0">
               <div className="rightcontact">
                 <a href="#">
                   <div className="dIcons location">
@@ -50,27 +77,30 @@ function Contact() {
               </div>
             </div>
 
-            <div className="col-md-7">
+            <div className="col-lg-7">
               <div className="form-right">
                 <h3>Write Us</h3>
-                <form action="">
+                <form onSubmit={sendEmail} >
                   <div className="from-group">
-                    <input type="text" className="form-control" placeholder="Your name" />
+                    <input name="name" type="text" className="form-control" placeholder="Your name" />
                   </div>
                   <div className="from-group">
-                    <input type="text" className="form-control" placeholder="Phone Number" />
-                  </div>
-
-                  <div className="from-group">
-                    <input type="text" className="form-control" placeholder="Email" />
+                    <input name="phonenumber" type="text" className="form-control" placeholder="Phone Number" />
                   </div>
 
                   <div className="from-group">
-                    <textarea className="form-control" placeholder="Message" />
+                    <input name="email" type="text" className="form-control" placeholder="Email" />
+                  </div>
+
+                  <div className="from-group">
+                    <textarea name="message" className="form-control" placeholder="Message" />
                   </div>
                   <div className="from-group d-flex flex-wrap align-items-center">
                     <div className="captcha-box"></div>
                     <button class="mainBtn border-0 px-5" type="submit" >Send Us</button>
+                  </div>
+                  <div className="form-group">
+                    {result ? <Result /> : null}
                   </div>
                 </form>
               </div>

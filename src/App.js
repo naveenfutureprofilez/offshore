@@ -15,36 +15,58 @@ import Whyus from './Pages/Whyus';
 // detail page
 import Ourclient from './Pages/Ourclient';
 import Clientdetail from './Pages/Clientdetail';
+import { useState } from 'react';
+import Preload from './elements/Preload';
+import Privacypolicy from './Pages/Privacypolicy';
+import Terms from './Pages/Terms';
 
 function App() {
+    // preloader
+    const [preload, setpreload] = useState(true);
+    setTimeout(function () {
+        setpreload(false);
+    }, 1500); // <-- time in milliseconds
+
     return (
         <div className="App"   >
-            <Router>
-                <Header />
-                {/* switch cases */}
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/why-us">
-                        <Whyus />
-                    </Route>
-                    <Route path="/services">
-                        <Service />
-                    </Route>
-                    <Route exact path="/our-clients">
-                        <Ourclient />
-                    </Route>
-                    <Route  path="/our-clients/:clientid">
-                        <Clientdetail />
-                    </Route>
-                    <Route path="/contact">
-                        <Contact />
-                    </Route>
-                </Switch>
+            {preload ? <Preload /> :
+                <Router>
+                    <Header />
+                    {/* switch cases */}
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
+                        <Route path="/why-us">
+                            <Whyus />
+                        </Route>
+                        <Route path="/services">
+                            <Service />
+                        </Route>
+                        <Route exact path="/our-clients">
+                            <Ourclient />
+                        </Route>
+                        <Route path="/our-clients/:clientid">
+                            <Clientdetail />
+                        </Route>
+                        <Route path="/contact">
+                            <Contact />
+                        </Route>
 
-                <Footer />
-            </Router>
+                        <Route path="/privacy-policy">
+                            <Privacypolicy />
+                        </Route>
+
+                        <Route path="/terms-and-condition">
+                            <Terms />
+                        </Route>
+
+                    </Switch>
+
+                    <Footer />
+                </Router>
+
+            }
         </div>
     );
 }
