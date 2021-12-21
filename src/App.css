@@ -81,8 +81,8 @@ body{animation:fadeInAnimation ease 3s;animation-iteration-count:1;animation-fil
 .agency-box.focus h2:before{background:#0081c8;}
 .agency-box.brand h2:before{background:#ee334e;}
 /* slider */
-.slideItem{display:flex !important;}
-.leftSlide{width:100%;max-width:45%;padding-right:50px;padding-bottom:40px;}
+.slideItem{display:flex !important; align-items: center; }
+.leftSlide{width:100%;max-width:45%;padding-right:50px;padding-bottom:0px;}
 .rightSlide{width:100%;max-width:55%;}
 .leftSlide .sec-title h1{line-height:55px;padding-bottom:20px;padding-top:0;}
 .solutions{position:relative;}
@@ -115,6 +115,17 @@ button.slick-arrow.slick-disabled{cursor:initial!important;}
 .innerbanner{background:rgba(230,240,249,0.5);padding:70px 0;}
 .innerbanner .rightbottom{max-width:610px;}
 .runningtext{font-family:Lato;font-style:normal;font-weight:500;font-size:22px;line-height:40px;color:#222222;}
+
+.form-control.focus-visible { animation:focus linear 1s; }
+
+@keyframes focus{
+    0% { border-color:#ccc; }
+    25% { border-color:red;}
+    50% {border-color:#ccc; }
+    100% { border-color:red;}
+}
+
+
 /* responisve */
 @media ( max-width:991px){.certified-devs .col-lg-5 img{max-height:380px;}
 .process-sec{display:block;}

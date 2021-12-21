@@ -19,6 +19,7 @@ import { useState } from 'react';
 import Preload from './elements/Preload';
 import Privacypolicy from './Pages/Privacypolicy';
 import Terms from './Pages/Terms';
+ 
 
 function App() {
     // preloader
@@ -27,6 +28,7 @@ function App() {
         setpreload(false);
     }, 1500); // <-- time in milliseconds
 
+    
     return (
         <div className="App"   >
             {preload ? <Preload /> :
@@ -52,20 +54,16 @@ function App() {
                         <Route path="/contact">
                             <Contact />
                         </Route>
-
                         <Route path="/privacy-policy">
                             <Privacypolicy />
                         </Route>
-
                         <Route path="/terms-and-condition">
                             <Terms />
                         </Route>
-
                     </Switch>
-
+                    {/* footer */}
                     <Footer />
                 </Router>
-
             }
         </div>
     );

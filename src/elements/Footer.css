@@ -3,9 +3,12 @@ footer{background:#12142E;padding:auto;padding:60px 0;}
 footer a,footer li,footer p{font-family:Lato;font-style:normal;font-weight:300;font-size:16px;line-height:23px;/* or 144% */
  color:#EEEEEE;}
 footer h3{font-family:Gill Sans;font-style:normal;font-weight:500;font-size:23px;line-height:31px;color:#FFFFFF;margin-bottom:10px;}
-.footer-des{flex:0 0 36%;padding-right:60px;}
-.footer-links{flex:0 0 21%;padding-right:15px;}
-.footer-contact{flex:0 0 22%;}
+.footer-des{flex:0 0 50%; padding: 0 50px; text-align: center;}
+.footer-links {
+    flex: 0 0 25%;
+    padding-left: 70px;
+}
+.footer-contact{flex:0 0 25%;}
 .footer-des ul li{margin-right:28px;margin-top:10px;}
 .footer-links ul li{position:relative;}
 .footer-links ul li:before{content:"-";padding-right:10px;}

@@ -2,7 +2,7 @@ import Button from "./Button";
 import Client from "./Clients";
 import Heroform from "./Heroform";
 import './Hero.css'
-function Hero() {
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';function Hero() {
     return <>
         <div class="homeBanner">
             <div class="container">
@@ -12,7 +12,7 @@ function Hero() {
                         <h1>The Leading <span>Offshore IT
                             Staffing</span> Company In India</h1>
                         <p>We provide state-of-the-art outsourcing IT solutions to all scales of businesses at highly competitive prices.</p>
-                        <Button text={"Let’s talk"} addclass={"border-btn mt-4 mt-md-5"} href={"#"} />
+                        <NavLink className="mainBtn border-btn mt-4 mt-md-5" to="/contact">Let’s talk</NavLink>
                     </div>
                     <div class="col-md-6">
                         <Heroform />

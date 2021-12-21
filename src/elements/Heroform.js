@@ -1,23 +1,44 @@
 import { useState } from "react";
-import emailjs from 'emailjs-com';
-// import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { React } from "react";
+import emailjs from "emailjs-com";
+import { useForm } from "react-hook-form";
+
 function Heroform(props) {
+    // result success message
     const Result = () => {
         return <div class="mt-3 alert alert-success" role="alert">
             Your Message has been sent. we will back to you soon.
         </div>
     }
-
     const [result, showresult] = useState(false);
-    const sendEmail = (e) => {
-        e.preventDefault();
-        emailjs.sendForm('service_yck1gij', 'template_3kuvsjo', e.target, 'user_itVge450EwlJRH3TFjFlU')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-        e.target.reset();
+
+    // send email js function
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+    } = useForm({
+        defaultValues: { yes_i_understand: false }
+    });
+    const sendEmail = (formData) => {
+        emailjs
+            .send(
+                "service_5qjj256",
+                "template_loiw1nh",
+                formData,
+                "user_9vGftkoNZiOYOvLBTZCvP"
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+
+        reset();
         setTimeout(() => {
             showresult(true);
         }, 500);
@@ -31,24 +52,44 @@ function Heroform(props) {
         <div class="heroformOuter">
             <div class="heroform">
                 <h3><span>Quick</span> Contact Us</h3>
-                <form onSubmit={sendEmail} >
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Your name" />
+                <form onSubmit={handleSubmit(sendEmail)} >
+                    <div class="form-group mb-3">
+                        <input {...register("name", { required: "Name is Required", minLength: { value: 4 } })}
+                            type="text" class="form-control" name="name" placeholder="Your name" />
+                        {errors.name && (
+                            <div className="invalid-feedback d-block">
+                                Please fill your First Name
+                            </div>
+                        )}
                     </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="email" placeholder="Email" />
+                    <div class="form-group mb-3">
+                        <input {...register("email", { required: "email is Required", minLength: { value: 10 } })} type="text" class="form-control" name="email" placeholder="Email" />
+                        {errors.email && (
+                            <div className="invalid-feedback d-block">
+                                Please enter your valid email address
+                            </div>
+                        )}
+                    </div>
+                    <div class="form-group mb-3">
+                        <input {...register("subject", { required: "email is Required", minLength: { value: 10 } })} type="text" class="form-control" name="subject" placeholder="Subject" />
+                        {errors.subject && (
+                            <div className="invalid-feedback d-block">
+                                Min 10 characters required.
+                            </div>
+                        )}
+                    </div>
+                    <div class="form-group mb-3">
+                        <textarea {...register("message", { required: "message is Required", minLength: { value: 20 } })} class="form-control" name="message" placeholder="Message"></textarea>
+                        {errors.message && (
+                            <div className="invalid-feedback d-block">
+                                Min 30 characters required.
+                            </div>
+                        )}
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="subject" placeholder="Subject" />
+                        <input type="submit" class="mainBtn border-0 px-5" value="Send Us" />
                     </div>
-                    <div class="form-group">
-                        <textarea  class="form-control" name="message" placeholder="Message"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input   type="submit" class="mainBtn border-0 px-5" value="Send Us" />
-                    </div>
-                    <div className="form-group">
+                    <div className="form-group mt-3">
                         {result ? <Result /> : null}
                     </div>
                 </form>

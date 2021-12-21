@@ -3,7 +3,7 @@ import Hero from "../elements/Hero";
 import Hiredev from "../elements/Hiredev";
 import Newsletter from "../elements/Newsletter";
 import Slidersolution from "../elements/Slidersolution";
-
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 function Home(props) {
     return <>
 
@@ -177,7 +177,7 @@ function Home(props) {
                                 <li>CLIENT SATISFACTION</li>
                             </ul>
                         </div>
-                        <Button text={"Let’s talk"} href={"#"} addclass={"border-btn btn-outline-light mt-4"} />
+                        <NavLink className="mainBtn border-btn btn-outline-light mt-4" to="/contact">Let’s talk</NavLink>
 
                     </div>
                     <div className="proright">
@@ -222,7 +222,8 @@ function Home(props) {
                         </div>
                     </div>
                 </div>
-                <Button text={"Know More"} href={"#"} addclass={"border-btn d-table m-auto"} />
+
+                <NavLink class="mainBtn border-btn d-table m-auto"  to="/services">Know More</NavLink>
             </div>
         </div>
 
@@ -242,7 +243,7 @@ function Home(props) {
                             <h2>Offshore IT Staffing</h2>
                             <h3>A leading offshore staffing IT solution provider since 2008</h3>
                             <p>Some metrics play an essential role to measure the pulse of a company’s customer service efficiency, while others are more evaluating if a brand has a customer-centric approach. Our customer dashboard will examine this second type of metrics.</p>
-                            <Button text={"Learn More"} href={"#"} addclass={"mt-4 mt-lg-5"} />
+                            <NavLink class="mainBtn mt-4 mt-lg-5"  to="/services">Learn More</NavLink>
                         </div>
                     </div>
                     <div className="col-lg-6 ps-lg-5">

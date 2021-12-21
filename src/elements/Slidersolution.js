@@ -21,32 +21,13 @@ function Slidersolution() {
                             Solution for<br />
                             <span class="orange-color">Complex</span><br />
                             Projects</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus eget justo et iaculis.</p>
+                        <p>Wish To Have Your Dream Project Completed By World Class Offshore IT Experts? This Is The Place To Be.</p>
                     </div>
                 </div>
                 <div className="rightSlide">
                     <img src={window.location.origin + '/img/solution.png'} class="img-fluid m-auto d-table" />
                 </div>
             </div>
-            {/* item end */}
-
-            <div className="slideItem"> 
-                <div className="leftSlide">
-                    <div className="sec-title text-white">
-                        <h1>Simple<br />
-                            Solution for<br />
-                            <span class="orange-color">Complex</span><br />
-                            Projects</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus eget justo et iaculis.</p>
-                    </div>
-                </div>
-                <div className="rightSlide">
-                    <img src={window.location.origin + '/img/solution.png'} class="img-fluid m-auto d-table" />
-                </div>
-            </div>
-            {/* item end */}
-
-
         </Slider>
     </>
 }

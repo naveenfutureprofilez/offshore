@@ -2,33 +2,67 @@ import Pagecaption from "../elements/Pagecaption";
 import './Contact.css'
 import Newsletter from "../elements/Newsletter";
 import { useState } from "react";
-import emailjs from 'emailjs-com';
+import { React } from "react";
+import emailjs from "emailjs-com";
+import { useForm } from "react-hook-form";
 
 function Contact() {
 
+  
   const Result = () => {
     return <div class="mt-3 alert alert-success" role="alert">
-      Your Message has been sent. we will back to you soon.
+        Thank you for subscribe. we will get back to you soon.
     </div>
-  }
-  const [result, showresult] = useState(false);
+}
+const [result, showresult] = useState(false);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs.sendForm('service_7zzfpgs', 'template_3kuvsjo', e.target, 'user_itVge450EwlJRH3TFjFlU')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-    e.target.reset();
+// email js
+// send email js function
+const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+} = useForm({
+    defaultValues: { yes_i_understand: false }
+});
+
+const sendEmail = (formData) => {
+    emailjs
+
+        // .send(
+        //     'service_jnjzp9n', 'template_pprcpg7',
+        //     formData,
+        //     'user_itVge450EwlJRH3TFjFlU'
+        // )
+
+        .send(
+            "service_5qjj256",
+            "template_loiw1nh",
+            formData,
+            "user_9vGftkoNZiOYOvLBTZCvP"
+        )
+
+
+        .then(
+            (result) => {
+                console.log(result.text);
+            },
+            (error) => {
+                console.log(error.text);
+            }
+        );
+
+    reset();
     setTimeout(() => {
-      showresult(true);
+        showresult(true);
     }, 500);
+
     setTimeout(() => {
-      showresult(false);
+        showresult(false);
     }, 4000);
-  };
+};
+
 
 
   return <>
@@ -80,21 +114,48 @@ function Contact() {
             <div className="col-lg-7">
               <div className="form-right">
                 <h3>Write Us</h3>
-                <form onSubmit={sendEmail} >
-                  <div className="from-group">
-                    <input name="name" type="text" className="form-control" placeholder="Your name" />
+                <form onSubmit={handleSubmit(sendEmail)} >
+                  <div className="from-group mb-3">
+                    <input 
+                    {...register("name", { required: "name is Required", minLength: { value:4 } })} name="name" type="text" className="form-control" placeholder="Your name" />
+                  
+                  {errors.name && (
+                            <div className="invalid-feedback d-block">
+                               Please fill your First Name
+                            </div>
+                        )}
+                  
                   </div>
-                  <div className="from-group">
-                    <input name="phonenumber" type="text" className="form-control" placeholder="Phone Number" />
+                  <div className="from-group mb-3">
+                    <input 
+                    {...register("phonenumber", { required: "Phone Number is Required", minLength: { value: 10 } })}
+                    name="phonenumber" type="text" className="form-control" placeholder="Phone Number" />
+                    {errors.phonenumber && (
+                            <div className="invalid-feedback d-block mb-3">
+                               Please enter your valid phonenumber
+                            </div>
+                        )}
                   </div>
 
-                  <div className="from-group">
-                    <input name="email" type="text" className="form-control" placeholder="Email" />
+                  <div className="from-group mb-3">
+                    <input {...register("email", { required: "email is Required", minLength: { value: 10 } })} name="email" type="text" className="form-control" placeholder="Email" />
+                    {errors.email && (
+                            <div className="invalid-feedback d-block mb-3">
+                               Please enter your valid email address
+                            </div>
+                        )}
                   </div>
 
-                  <div className="from-group">
-                    <textarea name="message" className="form-control" placeholder="Message" />
-                  </div>
+                  <div className="from-group mb-3">
+                    <textarea {...register("message", { required: "message is Required", minLength: { value: 20} })}  name="message" className="form-control" placeholder="Message" />
+
+                    {errors.message && (
+                          <div className="invalid-feedback d-block">
+                          Min 30 characters required.
+                       </div>
+                        )}
+                        
+                        </div>
                   <div className="from-group d-flex flex-wrap align-items-center">
                     <div className="captcha-box"></div>
                     <button class="mainBtn border-0 px-5" type="submit" >Send Us</button>
